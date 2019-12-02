@@ -1,5 +1,4 @@
-clear all;
-clc;
+
 N=30;
 %M=17;
 fileID=fopen('Mini_150.csv','w');
@@ -44,19 +43,14 @@ for M = 1:30
 
 end;
 fclose(fileID);
-hold on;
-plot(A(:,1),A(:,2));
 title("No of packets Vs Covarience");
 xlabel("No of packets");
 ylabel("Covarience");
-%figure,plot(B(:,1),B(:,2));
+plot(A(:,1),A(:,2));
+
 figure,plot(B(:,1),B(:,2));
-title("No. of packets Vs no of matching packets");
+title("No. of packets Vs no");
 xlabel("No. of packets");
 ylabel("No. of matching packets");
-
-save WS_spatial.mat;
-
-
 
  

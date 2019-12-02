@@ -3,15 +3,15 @@ clc;
 N=30;
 %M=17;
 fileID=fopen('Mini_150.csv','w');
-A=zeros(30,2);
-B=zeros(30,2);
-T=csvread('Dataset2.csv');
+C=zeros(30,2);
+D=zeros(30,2);
+%T=csvread('Dataset2.csv');
 
 %fprintf(fileID,"For N = %d\n\n\n",N);
 %fprintf(fileID,"M    count   cv\n");
 for M = 1:30
-    min=10;
-    max=20;
+    min=1;
+    max=30;
     for i=1:M
         for j=1:N
             %       P(i,j)=i+j;
@@ -19,7 +19,7 @@ for M = 1:30
         end
     end
     % r = (b-a).*rand(1000,1) + a;
-    d=T(:,1)%(max-min).*rand(N,1)+min;
+    d=(max-min).*rand(N,1)+min;
     d=round(d);
     y=P*d;
     P1=pinv(P);
@@ -37,26 +37,22 @@ for M = 1:30
         cv=0;
     end;
     nbytes2=fprintf(fileID,'%d    %d    %f \n',M,a,cv);
-    A(M,2)=cv;
-    A(M,1)=M;   
-    B(M,2)=a;
-    B(M,1)=M;
+    C(M,2)=cv;
+    C(M,1)=M;   
+    D(M,2)=a;
+    D(M,1)=M;
 
 end;
 fclose(fileID);
 hold on;
-plot(A(:,1),A(:,2));
+plot(C(:,1),C(:,2));
 title("No of packets Vs Covarience");
 xlabel("No of packets");
 ylabel("Covarience");
 %figure,plot(B(:,1),B(:,2));
-figure,plot(B(:,1),B(:,2));
+figure,plot(D(:,1),D(:,2));
 title("No. of packets Vs no of matching packets");
 xlabel("No. of packets");
 ylabel("No. of matching packets");
 
-save WS_spatial.mat;
-
-
-
- 
+save WS_random.mat;
