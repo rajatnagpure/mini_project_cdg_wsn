@@ -42,12 +42,15 @@ end;
 %     end;
 % end;
 %
-minnGraph=graph(Neighbour);
-plot(minnGraph,'xData',Positions(:,2),'yData',Positions(:,3));
 
-T= minspantree(minnGraph);
-figure,plot(T,'xData',Positions(:,2),'yData',Positions(:,3));
-
-[tree,d]=shortestpathtree(minnGraph,1);
-figure,p=plot(minnGraph,'xData',Positions(:,2),'yData',Positions(:,3));
-p.NodeCData=d;
+scatter(Positions(:,1),Positions(:,2));
+grid on;
+% minnGraph=graph(Neighbour);
+% plot(minnGraph,'xData',Positions(:,2),'yData',Positions(:,3));
+% 
+% T= minspantree(minnGraph);
+% figure,plot(T,'xData',Positions(:,2),'yData',Positions(:,3));
+% 
+% [tree,d]=shortestpathtree(minnGraph,1);
+% figure,p=plot(minnGraph,'xData',Positions(:,2),'yData',Positions(:,3));
+% p.NodeCData=d;

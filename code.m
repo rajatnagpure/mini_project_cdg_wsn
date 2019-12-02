@@ -45,6 +45,10 @@ for i=1:N
      plot(sensors(i).x,sensors(i).y,'ro')
      hold on
 end
+xticks(0:5:30);
+yticks([0:5:30]);
+grid on;
+
 fn=input('Enter file name to save id and positions of sensor nodes: ','s');
 if(isempty(fn))
     fn='Network1.txt';

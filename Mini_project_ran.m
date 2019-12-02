@@ -1,15 +1,15 @@
 clear all;
 clc;
-N=30;
+N=100;
 %M=17;
 fileID=fopen('Mini_150.csv','w');
-C=zeros(30,2);
-D=zeros(30,2);
+C=zeros(100,2);
+D=zeros(100,2);
 %T=csvread('Dataset2.csv');
 
 %fprintf(fileID,"For N = %d\n\n\n",N);
 %fprintf(fileID,"M    count   cv\n");
-for M = 1:30
+for M = 1:100
     min=1;
     max=30;
     for i=1:M
